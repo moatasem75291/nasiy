@@ -1,7 +1,10 @@
 import re
 import json
+import os
 
-with open("stopwords.json", "r", encoding="utf-8") as file:
+current_dir = os.getcwd()
+path = os.path.join(current_dir, "stopwords.json")
+with open(path, "r", encoding="utf-8") as file:
     stopwords = json.load(file)
 
 
