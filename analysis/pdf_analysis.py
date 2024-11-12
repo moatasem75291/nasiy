@@ -21,10 +21,10 @@ def generate_wordcloud(text):
     reversed_text = reverse_words(text)
 
     from PIL import ImageFont
-
+    
     font = ImageFont.load_default()
     wordcloud = WordCloud(
-        font_path="arial",
+        font_path=font,
         background_color="white",
         width=800,
         height=400,
