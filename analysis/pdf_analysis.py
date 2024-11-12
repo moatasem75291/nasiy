@@ -23,7 +23,7 @@ def generate_wordcloud(text):
     bidi_text = get_display(reversed_text)
 
     wordcloud = WordCloud(
-        font_path="arial.ttf",
+        font_path=font_path,
         background_color="white",
         width=800,
         height=400,
