@@ -82,7 +82,7 @@ orjson==3.10.11
 packaging==24.2
 pandas==2.2.3
 parso==0.8.4
-pillow==11.0.0
+pillow
 plotly==5.24.1
 plum-dispatch==1.7.4
 prometheus_client==0.21.0
