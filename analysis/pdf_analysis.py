@@ -30,7 +30,7 @@ def generate_wordcloud(text):
         height=400,
         collocations=False,
     )
-    wordcloud = wordcloud.generate_from_text(get_display(reshape(reversed_text))
+    wordcloud = wordcloud.generate_from_text(get_display(reshape(reversed_text)))
 
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.imshow(wordcloud, interpolation="bilinear")
