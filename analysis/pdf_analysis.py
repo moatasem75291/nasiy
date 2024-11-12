@@ -18,20 +18,19 @@ def reverse_words(text):
 
 
 def generate_wordcloud(text):
-    reshaped_text = reshape(text)
-    reversed_text = reverse_words(reshaped_text)
-    bidi_text = get_display(reversed_text)
+    reversed_text = reverse_words(text)
 
     from PIL import ImageFont
 
     font = ImageFont.load_default()
     wordcloud = WordCloud(
-        font_path=font,
+        font_path="arial",
         background_color="white",
         width=800,
         height=400,
         collocations=False,
-    ).generate(bidi_text)
+    )
+    wordcloud = wordcloud.generate_from_text(get_display(reshape(reversed_text))
 
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.imshow(wordcloud, interpolation="bilinear")
