@@ -3,7 +3,7 @@ import json
 import os
 
 current_dir = os.getcwd()
-path = os.path.join(current_dir, "stopwords.json")
+path = os.path.join(current_dir, "analysis/stopwords.json")
 with open(path, "r", encoding="utf-8") as file:
     stopwords = json.load(file)
 
