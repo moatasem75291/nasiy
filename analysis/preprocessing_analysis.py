@@ -1,7 +1,9 @@
 import re
-from nltk.corpus import stopwords
+import json
 
-stop_words = stopwords.words("arabic") + ["على", "علي", "او"]
+with open("../stopwords.json", "r", encoding="utf-8") as file:
+    stopwords = json.load(file)
+
 
 arabic_diacritics = re.compile(
     """
@@ -45,6 +47,6 @@ def preprocess(text):
     text = re.sub("ة", "ه", text)
     text = re.sub("گ", "ك", text)
 
-    text = " ".join([word for word in text.split() if word not in stop_words])
+    text = " ".join([word for word in text.split() if word not in stopwords])
 
     return text
