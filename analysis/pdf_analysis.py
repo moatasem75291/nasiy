@@ -40,7 +40,7 @@ def analyze_text_statistics(all_text):
 
 def perform_analysis(all_text):
     all_text = preprocess(all_text)
-    wordcloud = generate_wordcloud(all_text)
+    # wordcloud = generate_wordcloud(all_text)
     statistics = analyze_text_statistics(all_text)
 
-    return wordcloud, statistics
+    return _, statistics
