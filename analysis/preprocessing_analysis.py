@@ -1,7 +1,7 @@
 import re
 import json
 
-with open("../stopwords.json", "r", encoding="utf-8") as file:
+with open("stopwords.json", "r", encoding="utf-8") as file:
     stopwords = json.load(file)
 
 
