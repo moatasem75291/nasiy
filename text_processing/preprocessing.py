@@ -1,7 +1,4 @@
 import re
-from nltk.corpus import stopwords
-
-stop_words = stopwords.words("arabic")
 
 arabic_diacritics = re.compile(
     """
