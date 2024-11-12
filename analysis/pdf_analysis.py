@@ -5,6 +5,12 @@ import pandas as pd
 from arabic_reshaper import reshape
 from bidi.algorithm import get_display
 from analysis.preprocessing_analysis import preprocess
+import os
+import dotenv
+
+dotenv.load_dotenv()
+ARABIC_FONT_PATH = os.getenv("ARABIC_FONT_PATH")
+font_path = os.getcwd() + ARABIC_FONT_PATH
 
 
 def reverse_words(text):
@@ -17,7 +23,7 @@ def generate_wordcloud(text):
     bidi_text = get_display(reversed_text)
 
     wordcloud = WordCloud(
-        font_path="arial",
+        font_path=font_path,
         background_color="white",
         width=800,
         height=400,
