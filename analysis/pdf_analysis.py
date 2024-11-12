@@ -19,21 +19,13 @@ def reverse_words(text):
 
 def generate_wordcloud(text):
     reversed_text = reverse_words(text)
-
-    from PIL import ImageFont
-    
-    font = ImageFont.load_default()
-    wordcloud = WordCloud(
-        font_path=font,
-        background_color="white",
-        width=800,
-        height=400,
-        collocations=False,
-    )
-    wordcloud = wordcloud.generate_from_text(get_display(reshape(reversed_text)))
+    reshaped_text = reshape(reversed_text)
+    data = get_display(reshaped_text)
+    WordCloud = WordCloud(font_path='arial', background_color='white',
+                  mode='RGB', width=800, height=400).generate(data)
 
     fig, ax = plt.subplots(figsize=(10, 5))
-    ax.imshow(wordcloud, interpolation="bilinear")
+    ax.imshow(WordCloud)
     ax.axis("off")
     plt.close(fig)
     return fig
