@@ -21,14 +21,15 @@ def generate_wordcloud(text):
     reversed_text = reverse_words(text)
     reshaped_text = reshape(reversed_text)
     data = get_display(reshaped_text)
-    WordCloud = WordCloud(font_path='arial', background_color='white',
-                  mode='RGB', width=800, height=400).generate(data)
-
+    wordcloud_instance = WordCloud(
+    font_path='arial', background_color='white',
+    mode='RGB', width=800, height=400
+    ).generate(data)
+    
     fig, ax = plt.subplots(figsize=(10, 5))
-    ax.imshow(WordCloud)
-    ax.axis("off")
-    plt.close(fig)
-    return fig
+    ax.imshow(wordcloud_instance, interpolation='bilinear')
+    ax.axis('off')
+    plt.show()
 
 
 def analyze_text_statistics(all_text):
