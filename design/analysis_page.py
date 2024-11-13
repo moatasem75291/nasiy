@@ -12,11 +12,11 @@ def show_analysis_page(session_key):
     st.write(summary)
 
     if st.session_state[session_key]["text_chunks"]:
-        wordcloud, statistics = perform_analysis(
+        statistics = perform_analysis(
             st.session_state[session_key]["full_text"]
         )
-        st.write("### Word Cloud")
-        st.pyplot(wordcloud)
+        # st.write("### Word Cloud")
+        # st.pyplot(wordcloud)
         st.write("### Top Word Frequencies")
         st.dataframe(statistics)
 
